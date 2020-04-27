@@ -1,0 +1,112 @@
+@import 'nib';
+
+global-reset();
+
+@import './variables';
+@import './mixins';
+@import './fonts';
+@import './reset';
+
+
+//滚动条
+::-webkit-scrollbar{
+	width: 5px;/* 纵向滚动条*/
+	height: 5px;/* 横向滚动条 */
+	background-color: #fff;
+}
+
+/*定义滚动条轨道 内阴影*/
+::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+	background-color: #fff;
+}
+
+/*定义滑块 内阴影*/
+::-webkit-scrollbar-thumb{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+	background-color: #D5D5D5;
+}
+
+
+
+
+html {
+	height: 100%;
+	box-sizing: border-box;
+	// background-image: url('/resources/images/body-bg-2.jpg');
+	// background-attachment: fixed;
+	// background-position: center;
+	// background-size: cover;
+	// background-repeat: no-repeat;
+	//background: #141E30;
+	// background: blue;
+	font-family: 'Roboto';
+	font-weight: 300;
+
+	+desktop() {
+		font-size: 16px;
+	}
+
+	+mobile() {
+		font-size: 12px;
+	}
+}
+	body{
+		overflow hidden
+	}
+a{
+
+	text-decoration:none ;
+	out-line: none;
+}
+body {
+	height: 100%;
+}
+
+#mediasoup-demo-app-container {
+	height: 100%;
+	width: 100%;
+	@import "./components/Client"
+	@import './components/LayOut';
+	@import './components/Aside';
+	@import './components/Footer';
+	@import './components/Room';
+	@import './components/Me';
+	@import './components/ChatInput';
+	@import './components/Peers';
+	@import './components/Peer';
+	@import './components/PeerView';
+	@import './components/Stats';
+	@import './components/Notifications';
+	@import './components/NetworkThrottle';	
+	@import './components/Home';
+	@import './components/My';
+	@import './components/MeetingRoom';
+	@import './components/WhiteBoard';
+	@import './components/Login';
+	@import './components/MyMeeting';
+	@import './components/MyId';
+	@import './components/Record';
+	@import './components/text';
+	@import "./components/Meetings";
+	@import "./components/RecordDetails.styl";
+}
+
+// Hack to detect in JS the current media query
+#mediasoup-demo-app-media-query-detector {
+	position: relative;
+	z-index: -1000;
+	bottom: 0;
+	left: 0;
+	height: 1px;
+	width: 1px;
+
+	// In desktop let it "visible" so elem.offsetParent returns the parent element
+	+desktop() {}
+
+	// In mobile ensure it's not displayed so elem.offsetParent returns null
+	+mobile() {
+		display: none;
+		position: fixed; // Required for old IE
+	}
+}

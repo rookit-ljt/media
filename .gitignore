@@ -1,0 +1,6 @@
+node_modules/
+
+server/certs/
+server/public/mediasoup-demo-app.css
+server/public/mediasoup-demo-app.js
+
