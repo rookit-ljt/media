@@ -207,10 +207,10 @@ gulp.task('bundle:watch', () =>
 
 
 let middleware2 = proxyMiddleware('/api', {
-	target: 'https://192.168.0.141:4443',
+	target: 'https://192.168.0.101:4443',
 	changeOrigin: true,
 	pathRewrite: {
-		'^/api': 'https://192.168.0.141:4443' //路径重写
+		'^/api': 'https://192.168.0.101:4443' //路径重写
 	},
 	secure: false
 });

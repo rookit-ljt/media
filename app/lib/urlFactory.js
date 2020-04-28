@@ -7,7 +7,7 @@ export function getProtooUrl({ roomId, peerId, forceH264, forceVP9 })
 {
 	console.log("此处的roomId"+roomId);
 	console.log("此处的peerId"+peerId);
-	const hostname = "192.168.0.141";
+	const hostname = "192.168.0.101";
 	let url = `wss://${hostname}:${protooPort}/?roomId=${roomId}&peerId=${peerId}`;
 	if (forceH264)
 		url = `${url}&forceH264=true`;

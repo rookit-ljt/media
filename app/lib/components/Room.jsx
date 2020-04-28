@@ -62,6 +62,7 @@ class Room extends React.Component {
         const {roomClient} = this.props;
         const roomId = localStorage.getItem("roomId")
         roomClient.join(roomId);
+
     }
 }
 
@@ -71,14 +72,16 @@ Room.propTypes =
         room: appPropTypes.Room.isRequired,
         me: appPropTypes.Me.isRequired,
         amActiveSpeaker: PropTypes.bool.isRequired,
-        onRoomLinkCopy: PropTypes.func.isRequired
+        onRoomLinkCopy: PropTypes.func.isRequired,
     };
 
 const mapStateToProps = (state) => {
+    console.log(state.me.id)
     return {
         room: state.room,
         // roomId: state.client.room,
         me: state.me,
+
         amActiveSpeaker: state.me.id === state.room.activeSpeakerId
     };
 };
